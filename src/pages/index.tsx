@@ -1,10 +1,6 @@
-/* eslint-disable import/no-unresolved */
 import { ReactElement } from 'react';
-import { Swiper, SwiperSlide } from 'swiper/react';
+import Link from 'next/link';
 import Layout from '../components/Layout/Layout';
-
-import 'swiper/css';
-import 'swiper/css/navigation';
 
 export default function Home() {
   return (
@@ -17,9 +13,9 @@ export default function Home() {
         <h1 className="font-bold text-center text-[3rem] pt-10">Linhas</h1>
       </header>
 
-      {/* <main className="flex justify-center w-full h-[19.375rem] gap-4">
+      <main className="flex flex-wrap justify-center w-full min-h-[19.375rem] gap-4 pb-[6rem]">
         <Link href="/services">
-          <a className="w-[12.9375rem] rounded-[0.5rem]">
+          <a className="w-[12.9375rem] min-w-[12.9375rem] h-[19.375rem] rounded-[0.5rem]">
             <img
               className="min-w-full h-full object-cover rounded-[0.5rem]"
               src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=60"
@@ -27,39 +23,33 @@ export default function Home() {
             />
           </a>
         </Link>
-      </main> */}
-
-      <main className="border-2 max-w-[12.9375rem] min-h-[19.375rem] m-auto">
-        <Swiper className="w-full h-[19.375rem]" slidesPerView={1}>
-          <SwiperSlide className="bg-green-200 max-w-[12.9375rem] object-cover rounded-[0.5rem]">
+        <Link href="/services">
+          <a className="w-[12.9375rem] min-w-[12.9375rem] h-[19.375rem] rounded-[0.5rem]">
             <img
               className="min-w-full h-full object-cover rounded-[0.5rem]"
               src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=60"
               alt="Imagem do escritório da empresa"
             />
-          </SwiperSlide>
-          <SwiperSlide className="bg-green-200 max-w-[12.9375rem] object-cover rounded-[0.5rem]">
+          </a>
+        </Link>
+        <Link href="/services">
+          <a className="w-[12.9375rem] min-w-[12.9375rem] h-[19.375rem] rounded-[0.5rem]">
             <img
               className="min-w-full h-full object-cover rounded-[0.5rem]"
               src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=60"
               alt="Imagem do escritório da empresa"
             />
-          </SwiperSlide>
-          <SwiperSlide className="bg-green-200 max-w-[12.9375rem] object-cover rounded-[0.5rem]">
+          </a>
+        </Link>
+        <Link href="/services">
+          <a className="w-[12.9375rem] min-w-[12.9375rem] h-[19.375rem] rounded-[0.5rem]">
             <img
               className="min-w-full h-full object-cover rounded-[0.5rem]"
               src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=60"
               alt="Imagem do escritório da empresa"
             />
-          </SwiperSlide>
-          <SwiperSlide className="bg-green-200 max-w-[12.9375rem] object-cover rounded-[0.5rem]">
-            <img
-              className="min-w-full h-full object-cover rounded-[0.5rem]"
-              src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=60"
-              alt="Imagem do escritório da empresa"
-            />
-          </SwiperSlide>
-        </Swiper>
+          </a>
+        </Link>
       </main>
     </section>
   );
