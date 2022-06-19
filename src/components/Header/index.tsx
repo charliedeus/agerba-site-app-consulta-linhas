@@ -1,8 +1,19 @@
 import Link from 'next/link';
+import { motion } from 'framer-motion';
 
 export default function Header() {
+  const variants = {
+    hidden: { scale: 0.8, opacity: 0 },
+    visible: { scale: 1, opacity: 1, transition: { delay: 0.4 } },
+  };
+
   return (
-    <nav className="max-w-[1280px] h-[4.375rem] m-auto flex items-center justify-center sm:justify-between">
+    <motion.nav
+      initial="hidden"
+      animate="visible"
+      variants={variants}
+      className="max-w-[1280px] h-[4.375rem] m-auto flex items-center justify-center sm:justify-between"
+    >
       <Link href="/">
         <img
           className="w-[6.6875rem] sm:w-[8.6875rem] cursor-pointer"
@@ -106,6 +117,6 @@ export default function Header() {
           </svg>
         </div>
       </div>
-    </nav>
+    </motion.nav>
   );
 }
