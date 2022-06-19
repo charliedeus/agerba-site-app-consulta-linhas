@@ -5,6 +5,7 @@ import type { AppProps } from 'next/app';
 import '../styles/globals.css';
 
 type NextPageWithLayout = NextPage & {
+  // eslint-disable-next-line no-unused-vars
   getLayout?: (page: ReactElement) => ReactNode;
 };
 
