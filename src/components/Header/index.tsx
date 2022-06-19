@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 export default function Header() {
   return (
-    <nav className="max-w-[1280px] h-[4.375rem] m-auto flex items-center justify-center">
+    <nav className="max-w-[1280px] h-[4.375rem] m-auto flex items-center justify-center sm:justify-between">
       <Link href="/">
         <img
           className="w-[6.6875rem] cursor-pointer"
@@ -11,7 +11,7 @@ export default function Header() {
         />
       </Link>
 
-      <div className="hidden">
+      <div className="hidden sm:inline">
         <div className="social-links w-[12.5rem] h-full flex items-center justify-end gap-4">
           <svg
             width="24"
