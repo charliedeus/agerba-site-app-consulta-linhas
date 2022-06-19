@@ -7,6 +7,10 @@
     box-sizing: border-box;
   }
 
+  a, button {
+    cursor: pointer;
+  }
+
   html {
     font-family: 'Roboto', sans-serif;
     /* font-size: 62.5%; */
@@ -14,6 +18,7 @@
   }
 
   body {
+    padding-inline: 1rem;
     -web-font-smoothing: antialiased;
   }
 
@@ -22,5 +27,4 @@
     font-weight: 400;
     font-size: 1rem;
   }
-
 }

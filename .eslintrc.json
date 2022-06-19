@@ -26,6 +26,7 @@
     ],
     "rules": {
       "@next/next/no-img-element": "off",
+      "jsx-a11y/anchor-is-valid": "off",
       "prettier/prettier": "error",
       "react-hooks/rules-of-hooks": "error",
       "react-hooks/exhaustive-deps": "warn",
