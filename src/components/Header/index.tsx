@@ -5,7 +5,7 @@ export default function Header() {
     <nav className="max-w-[1280px] h-[4.375rem] m-auto flex items-center justify-center sm:justify-between">
       <Link href="/">
         <img
-          className="w-[6.6875rem] cursor-pointer"
+          className="w-[6.6875rem] sm:w-[8.6875rem] cursor-pointer"
           src="/logo.png"
           alt="Logomarca da Agência, nas cores vermelho e azul"
         />
