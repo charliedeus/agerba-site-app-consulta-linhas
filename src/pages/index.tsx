@@ -51,7 +51,7 @@ export default function Home() {
         {services.map(service => (
           <Link
             href={{
-              pathname: `/services/${service.slug}`,
+              pathname: `/companies`,
             }}
             key={service.slug}
           >
