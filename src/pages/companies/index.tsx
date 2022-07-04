@@ -7,6 +7,7 @@ import { api } from '../../services/api';
 
 import Layout from '../../components/Layout/Layout';
 
+// eslint-disable-next-line react/prop-types
 export default function Companies({ data }) {
   const companies = data;
 
