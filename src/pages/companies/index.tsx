@@ -1,4 +1,4 @@
-import { ChangeEvent, ReactElement, useState } from 'react';
+import { ReactElement, useState } from 'react';
 import { GetServerSideProps } from 'next';
 import Link from 'next/link';
 import debounce from 'lodash.debounce';

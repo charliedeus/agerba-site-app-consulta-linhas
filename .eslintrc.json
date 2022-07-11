@@ -25,6 +25,7 @@
         "prettier"
     ],
     "rules": {
+      "jsx-a11y/label-has-associated-control": "off",
       "@next/next/no-img-element": "off",
       "jsx-a11y/anchor-is-valid": "off",
       "react/no-array-index-key": "off",
