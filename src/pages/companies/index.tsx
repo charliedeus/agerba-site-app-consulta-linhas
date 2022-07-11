@@ -1,6 +1,7 @@
-import { ReactElement } from 'react';
+import { ChangeEvent, ReactElement, useState } from 'react';
 import { GetServerSideProps } from 'next';
 import Link from 'next/link';
+import debounce from 'lodash.debounce';
 import { EnvelopeSimple, MagnifyingGlass } from 'phosphor-react';
 
 import Layout from '../../components/Layout/Layout';
@@ -8,9 +9,28 @@ import Layout from '../../components/Layout/Layout';
 // eslint-disable-next-line react/prop-types
 export default function Companies({ data }) {
   const companies = data;
+  const [query, setQuery] = useState('');
+
+  const getFilteredCompanies = (fQuery: string, listCompanies) => {
+    if (!fQuery) {
+      return listCompanies;
+    }
+
+    return listCompanies.filter(company =>
+      company.denomepermissionario.includes(query),
+    );
+  };
+
+  const filteredCompanies = getFilteredCompanies(query, companies);
+
+  const updateQuery = e => {
+    setQuery(e?.target?.value);
+  };
+
+  const debouncedOnChange = debounce(updateQuery, 500);
 
   return (
-    <section className="max-w-[1280px] w-full h-[calc(100vh-4.375rem)] flex flex-col m-auto">
+    <section className="max-w-[1280px] w-full flex flex-col m-auto">
       {/* <h1 className="text-[2rem] font-extrabold">Página em construção...</h1> */}
       <div
         className="w-full h-[15rem] max-h-[15rem] bg-cover bg-no-repeat"
@@ -23,15 +43,18 @@ export default function Companies({ data }) {
       <header className="flex justify-between mt-[3.6875rem]">
         <h1 className="text-[2rem] font-bold">Empresas</h1>
 
-        <div className="flex items-center px-[1rem] rounded-2xl gap-4 bg-[#D9D9D9]">
+        <label className="flex gap-4 items-center px-[1rem] m-w-[40rem] self-center text-gray-800 relative bg-[#D9D9D9] rounded-full">
           <MagnifyingGlass size={24} />
+
           <input
-            className="bg-transparent border-none"
             type="text"
+            className="text-gray-500 bg-transparent border-none"
             placeholder="Busque a empresa"
+            onChange={debouncedOnChange}
           />
-        </div>
+        </label>
       </header>
+
       <div id="content" className="mt-12 text-[1rem]">
         <header className="flex font-bold mb-4 text-[#343a40]">
           <div className="w-96 max-w-96 px-4">
@@ -54,7 +77,7 @@ export default function Companies({ data }) {
           id="listCompanies"
           className="flex flex-col gap-4 text-[#4f565c]"
         >
-          {companies.map((company, index) => (
+          {filteredCompanies.map((company, index) => (
             <div
               key={index}
               id="row"
