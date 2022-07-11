@@ -17,7 +17,7 @@ export default function Companies({ data }) {
     }
 
     return listCompanies.filter(company =>
-      company.denomepermissionario.includes(query),
+      company.denomepermissionario.toLowerCase().includes(query.toLowerCase()),
     );
   };
 
