@@ -3,8 +3,6 @@ import { GetServerSideProps } from 'next';
 import Link from 'next/link';
 import { EnvelopeSimple, MagnifyingGlass } from 'phosphor-react';
 
-import { api } from '../../services/api';
-
 import Layout from '../../components/Layout/Layout';
 
 // eslint-disable-next-line react/prop-types
